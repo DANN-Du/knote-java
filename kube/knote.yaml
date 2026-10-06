@@ -15,6 +15,7 @@ spec:
       containers:
         - name: app
           image: danidug/knote:2.0.0
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
           env:
@@ -26,7 +27,6 @@ spec:
               value: mysecret
             - name: MINIO_HOST
               value: minio
-          imagePullPolicy: Always
 ---
 apiVersion: v1
 kind: Service
